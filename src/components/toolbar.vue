@@ -1,7 +1,7 @@
 <template>
   <q-toolbar
     class="text-white flex flex-center q-pa-sm"
-    style="border-radius: 0 0 100% 100%; background: radial-gradient(#8c184e , #400822 60%)"
+    style="background: radial-gradient(#8c184e , #400822 60%); border-radius: 0 0 100% 100%; "
   >
     <div class="flex flex-center">
       <div class="text-h6 q-mx-lg fontQatar toolbar-link">

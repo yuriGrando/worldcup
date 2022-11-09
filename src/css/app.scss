@@ -1,1 +1,10 @@
 // app global css in SCSS form
+@font-face {
+  font-family: "Qatar";
+  src: local("Qatar"),
+  url(../fonts/Qatar2022Arabic-Bold.ttf) format("truetype");
+}
+
+.fontQatar {
+  font-family: Qatar, Roboto, serif;
+}

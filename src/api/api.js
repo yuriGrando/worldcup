@@ -3,7 +3,7 @@ import {authOptions} from "src/api/apikey-token";
 
 // ====== API COPA DO MUNDO =======
 export const instance = axios.create({
-  baseURL: "http://api.cup2022.ir/api/v1/",
+  baseURL: "http://localhost:3000/api/v1/",
   headers: {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin" : "*"

@@ -1,7 +1,15 @@
 export default {
 
-    getUser: (state) => {
-        return state.user
+    getTeam: (state) => {
+        return state.team
+    },
+
+    getMatch: (state) => {
+        return state.match
+    },
+
+    getStandings: (state) => {
+        return state.standings
     }
 
 }

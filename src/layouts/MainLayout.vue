@@ -5,7 +5,7 @@
       <toolbar/>
     </q-header>
 
-    <q-page-container>
+    <q-page-container class="q-pa-xl">
       <router-view />
     </q-page-container>
 

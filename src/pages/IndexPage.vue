@@ -1,8 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <table-group>
 
-    </table-group>
     <img
       alt="App da Copa do Mundo"
       src="https://upload.wikimedia.org/wikipedia/pt/thumb/e/e3/2022_FIFA_World_Cup.svg/1200px-2022_FIFA_World_Cup.svg.png"
@@ -32,7 +30,20 @@ export default defineComponent({
 
     getInfo(){
       this.ActionGetTeam().then((res)=>{
-        console.log(res)
+          localStorage.setItem('team', res.data.data)
+          this.SET_TEAM(res.data.data)
+        console.log(res.data.data)
+      });
+
+      this.ActionGetStandings().then((res)=>{
+          this.SET_STANDINGS(res.data.data)
+          localStorage.setItem('standings', res.data.data)
+          console.log(res.data.data)
+      });
+
+      this.ActionGetMatch().then((res)=>{
+          localStorage.setItem('match', res.data.data)
+          this.SET_MATCH(res.data.data)
       })
     }
     // getStarted(){

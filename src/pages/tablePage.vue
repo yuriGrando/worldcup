@@ -1,14 +1,14 @@
 <template>
     <div
         v-for="data in tableData"
-        :key="data.group"
+        :key="data._id"
         class="row full-width"
     >
 
         <div class="col-7 q-pa-lg">
             <table-group
-                :teams="tableData.teams"
-                :group="tableData.group"
+                :teams="data.teams"
+                :group="data.group"
             />
         </div>
     </div>
@@ -36,7 +36,8 @@ export default {
         ...mapGetters('worldCup', ['getTeam', "getMatch", "getStandings"]),
 
         tableData: function (){
-            JSON.parse(localStorage.getItem('standings'))
+            console.log('oi',this.getStandings[0].teams)
+            return this.getStandings
         },
 
     }

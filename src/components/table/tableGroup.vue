@@ -1,15 +1,16 @@
 <template>
     <q-table
-        :title="`Grupo ${group.group}`"
-        :rows="group.teams"
+        :title="`Grupo ${group}`"
+        :rows="teams"
         :columns="columns"
         row-key="name"
         hide-bottom
+        class="q-pa-sm"
     >
         <template v-slot:body="props">
             <q-tr :props="props">
-                <q-td key="flag" :props="props">
-                    <div class="flex">
+                <q-td key="team" :props="props">
+                    <div class="flex items-center fontQatar">
                         <div class="q-mr-sm">
                             1
                         </div>
@@ -54,7 +55,7 @@
 
 <script>
 let columns = [
-    {name: 'team', label: 'Equipe', field: 'team'},
+    {name: 'team', label: 'Equipe', field: 'team', align: 'left'},
     {name: 'pts', label: 'pts', field: 'pts'},
     {name: 'mp', label: 'pj', field: 'mp'},
     {name: 'w', label: 'VIT', field: 'w'},
@@ -68,7 +69,8 @@ let columns = [
 export default {
     name: "tableGroup",
     props: {
-        group: Object,
+        teams: Array,
+        group: String,
     },
 
     data() {
@@ -78,7 +80,9 @@ export default {
         }
     },
 
-    methods: {}
+    methods: {
+
+    }
 }
 </script>
 

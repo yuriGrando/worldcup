@@ -1,11 +1,11 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh lpR fFf" class="flex flex-center">
 
     <q-header class="bg-primary text-white" style="border-radius: 0 0 100% 100%; ">
       <toolbar/>
     </q-header>
 
-    <q-page-container>
+    <q-page-container class="q-pa-xl" style="width: 1200px">
       <router-view />
     </q-page-container>
 

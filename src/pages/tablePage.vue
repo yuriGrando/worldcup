@@ -1,6 +1,6 @@
 <template>
     <div
-        v-for="data in tableData"
+        v-for="data in table"
         :key="data._id"
         class="row full-width"
     >
@@ -11,6 +11,12 @@
                 :group="data.group"
             />
         </div>
+
+        <div class="col-5 q-pa-lg">
+            <match-table
+                :matches="matchFilter(data.group)"
+            />
+        </div>
     </div>
 
 
@@ -19,26 +25,54 @@
 
 <script>
 import TableGroup from "components/table/tableGroup";
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
+import MatchTable from "components/table/matchTable";
 export default {
     name: "tablePage",
-    components: {TableGroup},
+    components: {MatchTable, TableGroup},
 
     data(){
         return{
             // ===== VAR TABLE ======
-
+            table: [],
+            match: []
 
         }
     },
 
     computed:{
-        ...mapGetters('worldCup', ['getTeam', "getMatch", "getStandings"]),
 
-        tableData: function (){
-            return this.getStandings
+    },
+
+    methods: {
+        ...mapActions('worldCup', ['ActionGetStandings', 'ActionGetMatch']),
+
+        // ======= REQUISIÇÃO DA TABELA =========
+        getTable(){
+            this.ActionGetStandings().then((res)=>{
+                this.table = res.data.data;
+            })
         },
 
+        // ======= REQUISIÇÃO DAS PARTIDAS =========
+        getMatch(){
+            this.ActionGetMatch().then((res)=>{
+                this.match = res.data.data;
+                console.log('oi', this.match)
+            })
+        },
+
+        // ======= METODO QUE RETORNA AS PARTIDAS FILTRADAS PRO GRUPO =======
+        matchFilter(group){
+            return this.match.filter(e => e.group === group)
+        }
+
+
+    },
+
+    mounted() {
+        this.getTable();
+        this.getMatch();
     }
 
 }

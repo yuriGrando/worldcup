@@ -6,6 +6,7 @@
         hide-bottom
         dense
         class="q-py-sm bg-primary fontQatar text-white"
+        style="height: 270px"
     >
 
         <template v-slot:top="props">
@@ -20,7 +21,7 @@
                 <q-td key="position" :props="props" style="padding: 0">
                     <div class="q-pa-xs tableRow">
                         <div class="q-mr-sm">
-                            {{definePosition(1)}}
+                            {{definePosition(props.row.team_id)}}
                         </div>
                     </div>
                 </q-td>
@@ -124,8 +125,13 @@ export default {
     },
 
     methods: {
-        definePosition(position){
 
+        // ====== METODO QUE RETORNA A POSIÇÃO =======
+        definePosition(id){
+            console.log(id)
+            let index = this.teams.findIndex(e => e.team_id === id)
+            console.log(index)
+            return index + 1
         }
 
     }

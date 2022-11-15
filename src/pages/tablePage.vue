@@ -36,7 +36,6 @@ export default {
         ...mapGetters('worldCup', ['getTeam', "getMatch", "getStandings"]),
 
         tableData: function (){
-            console.log('oi',this.getStandings[0].teams)
             return this.getStandings
         },
 

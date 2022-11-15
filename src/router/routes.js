@@ -7,6 +7,30 @@ const routes = [
         ]
     },
 
+    {
+        path: "/",
+        name: "Home",
+        component: () => import("../layouts/MainLayout.vue"),
+        children: [
+            {
+                path: "home",
+                component: () => import("../pages/Home/Homepage"),
+            },
+            {
+                path: "matches",
+                component: () => import("../pages/Matches/Matches"),
+            },
+            {
+                path: "tables",
+                component: () => import("../pages/Tables/Tables"),
+            },
+            {
+                path: "teams",
+                component: () => import("../pages/Team/Teams"),
+            },
+        ],
+    },
+
     // Always leave this as last one,
     // but you can also remove it
     {

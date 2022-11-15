@@ -1,10 +1,12 @@
 <template>
-
+<div>
+    PARTIDAS
+</div>
 </template>
 
 <script>
 export default {
-    name: "Teams"
+    name: "Matches"
 }
 </script>
 

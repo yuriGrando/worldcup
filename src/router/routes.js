@@ -8,35 +8,27 @@ const routes = [
     },
 
     {
-        path: "/",
-        name: "Home",
+        path: "/matches",
         component: () => import("../layouts/MainLayout.vue"),
         children: [
-            {
-                path: "home",
-                component: () => import("../pages/Home/Homepage"),
-            },
-            {
-                path: "matches",
-                component: () => import("../pages/Matches/Matches"),
-            },
-            {
-                path: "tables",
-                component: () => import("../pages/Tables/Tables"),
-            },
-            {
-                path: "teams",
-                component: () => import("../pages/Team/Teams"),
-            },
+            {path: '', component: () => import("../pages/Matches"),},
         ],
     },
 
     {
-        path: '/table',
-        component: () => import('layouts/MainLayout.vue'),
+        path: "/table",
+        component: () => import("../layouts/MainLayout.vue"),
         children: [
-            {path: '', component: () => import('pages/tablePage.vue')}
-        ]
+            {path: '', component: () => import('pages/tablePage.vue'),},
+        ],
+    },
+
+    {
+        path: "/teams",
+        component: () => import("../layouts/MainLayout.vue"),
+        children: [
+            {path: '', component: () => import("../pages/Teams"),},
+        ],
     },
 
     // Always leave this as last one,
@@ -44,7 +36,7 @@ const routes = [
     {
         path: '/:catchAll(.*)*',
         component: () => import('pages/ErrorNotFound.vue')
-    }
+    },
 ]
 
 export default routes

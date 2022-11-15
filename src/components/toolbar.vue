@@ -33,12 +33,12 @@
             </div>
 
             <q-btn style="background-color: transparent" type="a" href="/" flat dense>
-            <img
-                src="../../public/img/logo_branco.png"
-                alt="Logo_copadomundo"
-                style="width: 60px"
-                class="text-center q-mx-lg"
-            >
+                <img
+                    src="../../public/img/logo_branco.png"
+                    alt="Logo_copadomundo"
+                    style="width: 60px"
+                    class="text-center q-mx-lg"
+                >
             </q-btn>
 
             <div class="q-mx-md fontQatar">
@@ -78,10 +78,8 @@
 export default {
     name: "toolbar",
 
-    data(){
-        return {
-
-        }
+    data() {
+        return {}
     }
 }
 </script>

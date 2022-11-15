@@ -30,30 +30,23 @@ import MatchTable from "components/table/matchTable";
 export default {
     name: "tablePage",
     components: {MatchTable, TableGroup},
-
     data(){
         return{
             // ===== VAR TABLE ======
             table: [],
             match: []
-
         }
     },
-
     computed:{
-
     },
-
     methods: {
         ...mapActions('worldCup', ['ActionGetStandings', 'ActionGetMatch']),
-
         // ======= REQUISIÇÃO DA TABELA =========
         getTable(){
             this.ActionGetStandings().then((res)=>{
                 this.table = res.data.data;
             })
         },
-
         // ======= REQUISIÇÃO DAS PARTIDAS =========
         getMatch(){
             this.ActionGetMatch().then((res)=>{
@@ -61,23 +54,17 @@ export default {
                 console.log('oi', this.match)
             })
         },
-
         // ======= METODO QUE RETORNA AS PARTIDAS FILTRADAS PRO GRUPO =======
         matchFilter(group){
             return this.match.filter(e => e.group === group)
         }
-
-
     },
-
     mounted() {
         this.getTable();
         this.getMatch();
     }
-
 }
 </script>
 
 <style scoped>
-
 </style>

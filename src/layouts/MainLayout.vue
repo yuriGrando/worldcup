@@ -7,7 +7,7 @@
             </q-header>
 
     <q-page-container class="q-pa-xl" style="width: 1200px">
-      <router-view />
+        <router-view />
     </q-page-container>
 
             <q-footer style="background-color: transparent !important;">

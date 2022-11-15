@@ -17,7 +17,7 @@
                     Partidas
                 </div>
                 <div class="q-pa-none text-overline" style="background-color: #881335">
-                    {{`Rodada 0${position}`}}
+                    {{ `Rodada 0${position}` }}
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                     <!-- TIME DA CASA -->
 
                     <div class="fontQatar text-white" style="font-size:1rem ">
-                        {{match.home_team_en}}
+                        {{ match.home_team_en }}
                     </div>
                     <div>
                         <q-avatar
@@ -62,17 +62,15 @@
                 </div>
                 <div class="col-2 flex flex-center">
                     <div class="fontQatar text-center text-white" style="font-size:1.3rem ">
-                        {{match.away_score}}
+                        {{ match.away_score }}
                     </div>
                     <div class="fontQatar q-px-xs text-center text-white" style="font-size:1rem ">
                         X
                     </div>
                     <div class="fontQatar text-center text-white" style="font-size:1.3rem ">
-                        {{match.away_score}}
+                        {{ match.away_score }}
                     </div>
                 </div>
-
-
 
 
                 <!-- TIME DA VISITANTE -->
@@ -91,7 +89,7 @@
                     </div>
 
                     <div class="fontQatar text-white" style="font-size:1rem ">
-                        {{match.away_team_en}}
+                        {{ match.away_team_en }}
                     </div>
 
                 </div>
@@ -117,53 +115,42 @@ export default {
     props: {
         matches: Array,
     },
-
-    computed:{
-        matchData: function (){
-            if(this.position === 1){
-                return this.matches.slice(0,2);
-            }else if(this.position === 2){
-                return this.matches.slice(2,4);
-            }else if(this.position === 3){
-                return this.matches.slice(4,6);
+    computed: {
+        matchData: function () {
+            if (this.position === 1) {
+                return this.matches.slice(0, 2);
+            } else if (this.position === 2) {
+                return this.matches.slice(2, 4);
+            } else if (this.position === 3) {
+                return this.matches.slice(4, 6);
             }
-
         }
     },
-
-
-    data(){
-        return{
-            position : 1,
-
-
+    data() {
+        return {
+            position: 1,
         }
     },
-
-    methods:{
+    methods: {
         // ======= METODO QUE FILTRA AS POSIÇÕES DO ARRAY =========
-        changeMatches(val){
-            if(val === 'left'){
-                if(this.position > 1){
+        changeMatches(val) {
+            if (val === 'left') {
+                if (this.position > 1) {
                     this.position = this.position - 1;
                 }
             }
-
-            if(val === 'right'){
-                if(this.position < 3){
+            if (val === 'right') {
+                if (this.position < 3) {
                     this.position = this.position + 1;
                 }
             }
         }
     },
-
-    mounted(){
+    mounted() {
         console.log(this.match)
     }
-
 }
 </script>
 
 <style scoped>
-
 </style>

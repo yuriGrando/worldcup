@@ -1,14 +1,14 @@
 <template>
     <div class="bg-image">
-        <q-layout view="hHh lpR fFf">
+        <q-layout view="hHh lpR fFf" class="flex flex-center">
 
             <q-header style="background-color: transparent !important;">
                 <toolbar/>
             </q-header>
 
-            <q-page-container>
-                <router-view/>
-            </q-page-container>
+    <q-page-container class="q-pa-xl" style="width: 1200px">
+      <router-view />
+    </q-page-container>
 
             <q-footer style="background-color: transparent !important;">
                 <footer-page/>

@@ -3,7 +3,7 @@ import {authOptions} from "src/api/apikey-token";
 
 // ====== API COPA DO MUNDO =======
 export const instance = axios.create({
-  baseURL: "http://localhost:3000/api/v1/",
+  baseURL: "http://localhost:3000",
   headers: {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin" : "*"
@@ -14,7 +14,7 @@ export const instance = axios.create({
 export const requests = {
 
   get: (url) =>
-    instance.get(url, authOptions()),
+    instance.get(url),
 
   post: (url, body) =>
     instance.post(url, body, authOptions()),

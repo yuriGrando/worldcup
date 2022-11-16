@@ -1,7 +1,4 @@
 <template>
-    <div>
-        TABELA
-    </div>
     <div
         v-for="data in table"
         :key="data._id"

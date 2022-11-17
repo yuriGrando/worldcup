@@ -1,11 +1,11 @@
 <template>
     <q-toolbar
-        class="text-white flex flex-center q-pa-sm"
+        class="flex flex-center q-pa-sm"
         style="background: radial-gradient(circle, rgba(140,24,78,1) 0%, rgba(114,19,63,1) 8%, rgba(105,17,58,1) 19%, rgba(88,13,48,1) 32%, rgba(77,11,41,1) 46%, rgba(66,8,35,1) 63%, rgba(64,8,34,1) 100%); border-radius: 50% 50% 50% 50% / 0 0 100% 100%"
     >
         <div class="flex flex-center">
             <div class="q-mx-md fontQatar">
-                <q-item flat class="button bg-none" to="/">
+                <q-item flat class="button" manual-focus to="/">
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -19,7 +19,7 @@
             </div>
 
             <div class="q-mx-md fontQatar">
-                <q-item flat class="button bg-none" to="/table">
+                <q-item flat class="button" manual-focus to="/table">
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -32,7 +32,7 @@
                 </q-item>
             </div>
 
-            <q-btn style="background-color: transparent" type="a" href="/" flat dense>
+            <q-btn style="background-color: transparent" manual-focus type="a" href="/" flat dense>
                 <img
                     src="../../public/img/logo_branco.png"
                     alt="Logo_copadomundo"
@@ -42,7 +42,7 @@
             </q-btn>
 
             <div class="q-mx-md fontQatar">
-                <q-item flat class="button bg-none" to="/teams">
+                <q-item flat class="button" manual-focus to="/teams">
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -56,7 +56,7 @@
             </div>
 
             <div class="q-mx-md fontQatar">
-                <q-item flat class="button bg-none" to="/matches">
+                <q-item flat class="button" manual-focus to="/matches">
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -90,11 +90,8 @@ export default {
 }
 
 .button {
-    font-family: inherit;
     font-size: 16px;
-    background: none;
     padding: 1em;
-    display: flex;
     align-items: center;
     border: none;
     border-radius: 16px;

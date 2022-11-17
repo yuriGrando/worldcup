@@ -141,5 +141,16 @@ export default {
 </script>
 
 <style scoped>
+.tableRow {
+    background-color: #881335;
+    font-size: 1rem;
+    height: 30px
+}
 
+.imgTeam {
+    rotate: 45deg;
+    width: 30px;
+    height: 30px;
+    border: #fff solid 3px;
+}
 </style>

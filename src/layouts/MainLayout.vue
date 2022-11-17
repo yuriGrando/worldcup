@@ -1,49 +1,37 @@
 <template>
-  <q-layout view="hHh lpR fFf" class="flex flex-center">
+    <div class="bg-image">
+        <q-layout view="hHh lpR fFf" class="flex flex-center">
 
-    <q-header class="bg-primary text-white" style="border-radius: 0 0 100% 100%; ">
-      <toolbar/>
-    </q-header>
+            <q-header style="background-color: transparent !important;">
+                <toolbar/>
+            </q-header>
 
     <q-page-container class="q-pa-xl" style="width: 1200px">
-      <router-view />
+        <router-view />
     </q-page-container>
 
-    <q-footer class="bg-primary text-white">
-      <footer-page/>
-    </q-footer>
+            <q-footer style="background-color: transparent !important;">
+                <footer-page/>
+            </q-footer>
 
-  </q-layout>
-
-<!--  <q-layout view="lHh lpr lFf">-->
-
-<!--    <toolbar/>-->
-
-<!--    <q-page-container>-->
-<!--      <router-view />-->
-<!--    </q-page-container>-->
-
-<!--    <footer/>-->
-<!--  </q-layout>-->
-
+        </q-layout>
+    </div>
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import {defineComponent, ref} from 'vue'
 import Toolbar from "components/toolbar";
 import FooterPage from "components/footerPage";
 
 export default defineComponent({
-  name: 'MainLayout',
-  components: {
-    FooterPage,
-    Toolbar,
-  },
+    name: 'MainLayout',
+    components: {
+        FooterPage,
+        Toolbar,
+    },
 
-  setup () {
-    return {
-
+    setup() {
+        return {}
     }
-  }
 })
 </script>

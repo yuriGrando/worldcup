@@ -1,11 +1,11 @@
 <template>
     <q-toolbar
-        class="text-white flex flex-center q-pa-sm"
-        style="background: radial-gradient(#8c184e , #400822 60%); border-radius: 0 0 100% 100%; "
+        class="flex flex-center q-pa-sm"
+        style="background: radial-gradient(circle, rgba(140,24,78,1) 0%, rgba(114,19,63,1) 8%, rgba(105,17,58,1) 19%, rgba(88,13,48,1) 32%, rgba(77,11,41,1) 46%, rgba(66,8,35,1) 63%, rgba(64,8,34,1) 100%); border-radius: 50% 50% 50% 50% / 0 0 100% 100%"
     >
         <div class="flex flex-center">
             <div class="q-mx-md fontQatar">
-                <q-item flat class="button bg-none">
+                <q-item flat class="button" manual-focus to="/">
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -14,12 +14,12 @@
                             </svg>
                         </div>
                     </div>
-                    <span>HOME</span>
+                    <span>Home</span>
                 </q-item>
             </div>
 
             <div class="q-mx-md fontQatar">
-                <q-item flat class="button bg-none">
+                <q-item flat class="button" manual-focus to="/table">
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -28,19 +28,21 @@
                             </svg>
                         </div>
                     </div>
-                    <span>TABELA</span>
+                    <span>Tabela</span>
                 </q-item>
             </div>
 
-            <img
-                src="../../public/img/logo_branco.png"
-                alt="Logo_copadomundo"
-                style="width: 60px"
-                class="text-center q-mx-lg"
-            >
+            <q-btn style="background-color: transparent" manual-focus type="a" href="/" flat dense>
+                <img
+                    src="../../public/img/logo_branco.png"
+                    alt="Logo_copadomundo"
+                    style="width: 60px"
+                    class="text-center q-mx-lg"
+                >
+            </q-btn>
 
             <div class="q-mx-md fontQatar">
-                <q-item flat class="button bg-none">
+                <q-item flat class="button" manual-focus to="/teams">
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -49,12 +51,12 @@
                             </svg>
                         </div>
                     </div>
-                    <span>TIMES</span>
+                    <span>Times</span>
                 </q-item>
             </div>
 
             <div class="q-mx-md fontQatar">
-                <q-item flat class="button bg-none">
+                <q-item flat class="button" manual-focus to="/matches">
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -63,7 +65,7 @@
                             </svg>
                         </div>
                     </div>
-                    <span>PARTIDAS</span>
+                    <span>Partidas</span>
                 </q-item>
             </div>
         </div>
@@ -76,10 +78,8 @@
 export default {
     name: "toolbar",
 
-    data(){
-        return {
-
-        }
+    data() {
+        return {}
     }
 }
 </script>
@@ -90,11 +90,8 @@ export default {
 }
 
 .button {
-    font-family: inherit;
-    font-size: 18px;
-    background: none;
+    font-size: 16px;
     padding: 1em;
-    display: flex;
     align-items: center;
     border: none;
     border-radius: 16px;

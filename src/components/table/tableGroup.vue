@@ -1,97 +1,99 @@
 <template>
-    <q-table
-        :rows="teams"
-        :columns="columns"
-        row-key="name"
-        hide-bottom
-        dense
-        class="q-py-sm bg-primary fontQatar text-white"
-        style="height: 270px"
-    >
+    <div>
+        <q-table
+            :rows="teams"
+            :columns="columns"
+            row-key="name"
+            hide-bottom
+            dense
+            class="q-py-sm bg-primary fontQatar text-white"
+            style="height: 270px"
+        >
 
-        <template v-slot:top="props">
-            <div class="fit q-pa-sm text-center fontQatar text-h5">
-                {{`Grupo ${group}`}}
-            </div>
-        </template>
+            <template v-slot:top="props">
+                <div class="fit q-pa-sm text-center fontQatar text-h5">
+                    {{`Grupo ${group}`}}
+                </div>
+            </template>
 
-        <template v-slot:body="props">
-            <q-tr :props="props" class="bg-primary" >
+            <template v-slot:body="props">
+                <q-tr :props="props" class="bg-primary" >
 
-                <q-td key="position" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        <div class="q-mr-sm">
-                            {{definePosition(props.row.team_id)}}
-                        </div>
-                    </div>
-                </q-td>
-
-                <q-td key="imgTeam" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        <div class="">
-                            <q-img
-                                :src="props.row.flag"
-                            />
-                        </div>
-
-                    </div>
-                </q-td>
-
-                <q-td key="team" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        <div class="flex items-center">
-                            <div>
-                                {{ props.row.name_en}}
+                    <q-td key="position" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            <div class="q-mr-sm">
+                                {{definePosition(props.row.team_id)}}
                             </div>
                         </div>
-                    </div>
+                    </q-td>
 
-                </q-td>
+                    <q-td key="imgTeam" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            <div class="">
+                                <q-img
+                                    :src="props.row.flag"
+                                />
+                            </div>
 
-                <q-td key="mp" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        {{ props.row.mp }}
-                    </div>
-                </q-td>
-                <q-td key="w" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        {{ props.row.w }}
-                    </div>
-                </q-td>
-                <q-td key="d" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        {{ props.row.d }}
-                    </div>
-                </q-td>
-                <q-td key="l" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        {{ props.row.l }}
-                    </div>
-                </q-td>
-                <q-td key="gf" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        {{ props.row.gf }}
-                    </div>
-                </q-td>
-                <q-td key="ga" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow">
-                        {{ props.row.ga }}
-                    </div>
-                </q-td>
-                <q-td key="gd" :props="props" style="padding: 0">
-                    <div class="q-pa-xs tableRow" >
-                        {{ props.row.gd }}
-                    </div>
-                </q-td>
-                <q-td key="pts" :props="props" style="padding: 0">
-                    <div class="q-my-xs q-pa-xs text-primary tableRow" style="background-color: #00cfb7">
-                        {{ props.row.pts }}
-                    </div>
+                        </div>
+                    </q-td>
 
-                </q-td>
-            </q-tr>
-        </template>
-    </q-table>
+                    <q-td key="team" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            <div class="flex items-center">
+                                <div>
+                                    {{ props.row.name_en}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </q-td>
+
+                    <q-td key="mp" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            {{ props.row.mp }}
+                        </div>
+                    </q-td>
+                    <q-td key="w" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            {{ props.row.w }}
+                        </div>
+                    </q-td>
+                    <q-td key="d" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            {{ props.row.d }}
+                        </div>
+                    </q-td>
+                    <q-td key="l" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            {{ props.row.l }}
+                        </div>
+                    </q-td>
+                    <q-td key="gf" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            {{ props.row.gf }}
+                        </div>
+                    </q-td>
+                    <q-td key="ga" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow">
+                            {{ props.row.ga }}
+                        </div>
+                    </q-td>
+                    <q-td key="gd" :props="props" style="padding: 0">
+                        <div class="q-pa-xs tableRow" >
+                            {{ props.row.gd }}
+                        </div>
+                    </q-td>
+                    <q-td key="pts" :props="props" style="padding: 0">
+                        <div class="q-my-xs q-pa-xs text-primary tableRow" style="background-color: #00cfb7">
+                            {{ props.row.pts }}
+                        </div>
+
+                    </q-td>
+                </q-tr>
+            </template>
+        </q-table>
+    </div>
 </template>
 
 <script>
@@ -139,7 +141,6 @@ export default {
 </script>
 
 <style scoped>
-
 .tableRow {
     background-color: #881335;
     font-size: 1rem;
@@ -152,5 +153,4 @@ export default {
     height: 30px;
     border: #fff solid 3px;
 }
-
 </style>

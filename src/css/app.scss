@@ -1,10 +1,16 @@
 // app global css in SCSS form
 @font-face {
-  font-family: "Qatar";
-  src: local("Qatar"),
-  url(../fonts/Qatar2022Arabic-Bold.ttf) format("truetype");
+    font-family: "Qatar";
+    src: local("Qatar"),
+    url(../fonts/Qatar2022Arabic-Bold.ttf) format("truetype");
 }
 
 .fontQatar {
-  font-family: Qatar, Roboto, serif;
+    font-family: Qatar, Roboto, serif;
+}
+
+.bg-image {
+    background-image: url(../../public/img/cupBackgroundLight.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

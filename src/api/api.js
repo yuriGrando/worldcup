@@ -1,22 +1,22 @@
 import axios from 'axios';
 import {authOptions} from "src/api/apikey-token";
 
-// ====== API COPA DO MUNDO =======
+// ====== API URL =======
 export const instance = axios.create({
-  baseURL: "http://localhost:3000",
-  headers: {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin" : "*"
-  }
+    baseURL: "https://worldcup2022api.herokuapp.com",
+    headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+    }
 });
 
 //====== REQUEST CONFIGURAÇÕES ======
 export const requests = {
 
-  get: (url) =>
-    instance.get(url),
+    get: (url) =>
+        instance.get(url),
 
-  post: (url, body) =>
-    instance.post(url, body, authOptions()),
+    post: (url, body) =>
+        instance.post(url, body, authOptions()),
 
 }

@@ -6,15 +6,15 @@ export const ActionDoLogin = ({dispatch}, payload) => {
 }
 
 export const ActionGetMatch = ({dispatch}, payload) => {
-    return requests.get('match');
+    return requests.get('worldcup/api/v1/match');
 }
 
 export const ActionGetStandings = ({dispatch}, payload) => {
-    return requests.get('standings');
+    return requests.get('worldcup/api/v1/standings');
 }
 
 export const ActionGetTeam = ({dispatch}, payload) => {
-    return requests.get('team');
+    return requests.get('/worldcup/api/v1/team');
 }
 
 

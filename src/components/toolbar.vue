@@ -32,14 +32,14 @@
                 </q-item>
             </div>
 
-            <q-btn style="background-color: transparent" manual-focus type="a" href="/" flat dense>
+            <q-item style="background-color: transparent" manual-focus type="a" href="/" flat dense>
                 <img
                     src="../../public/img/logo_branco.png"
                     alt="Logo_copadomundo"
                     style="width: 60px"
                     class="text-center q-mx-lg"
                 >
-            </q-btn>
+            </q-item>
 
             <div class="q-mx-md fontQatar">
                 <q-item flat class="button" manual-focus to="/teams">

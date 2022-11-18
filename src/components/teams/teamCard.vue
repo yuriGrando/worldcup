@@ -1,29 +1,15 @@
 <template>
-    <div class="q-pa-md fontQatar">
-        <q-table
-            grid
-            :rows="rows"
-            :columns="columns"
-            row-key="_id"
-            hide-header
-        >
-            <template v-slot:item="props">
-                <div class="q-pa-xs col-xs-12 col-sm-6 col-md-4">
-                    <q-card>
-                        <q-card-section class="text-center">
-                            Calories for
-                            <br>
-                            <strong>{{ props.row.name }}</strong>
-                        </q-card-section>
-                        <q-separator></q-separator>
-                        <q-card-section class="flex flex-center">
-                            <div>{{ props.row.groups }} g</div>
-                        </q-card-section>
-                    </q-card>
+        <q-item class="q-px-sm q-pt-lg fontQatar">
+            <q-card class="bg-white text-center" style="height: 250px; width: 190px">
+                <div class="effect q-pb-md">
+                    <q-img :src="team.flag" style="width: 120px; height: 120px; border: solid 2px #8c184e; border-radius: 50%;"></q-img>
                 </div>
-            </template>
-        </q-table>
-    </div>
+                <div>
+                    <q-item-section style="font-size: 1.3em"> {{ team.name_en }}</q-item-section>
+                    <q-item-section> {{ "Grupo: " + team.groups }}</q-item-section>
+                </div>
+            </q-card>
+        </q-item>
 </template>
 
 <script>
@@ -31,37 +17,45 @@
 export default {
     name: "teamCard",
     props: {
-        teams: Array,
+        team: Array,
     },
 
-    data(){
-        return {
-            columns: [
-                //{ name: 'flag', label: 'flag', field: 'flag'},
-                { name: 'name_en', label: 'name_en', field: 'name_en'},
-                { name: 'groups', label: 'groups', field: 'groups'},
-            ],
-            rows: [
-                { name: 'name_en'},
-                { groups: 'groups'},
-                { flag: 'flag'},
-            ]
-        }
+    data() {
+        return {}
     },
 
     mounted() {
-        console.log("TIMES", this.teams)
-        this.rows.name = this.team.name_en
-        console.log("nome", this.rows.name)
-        // this.rows.groups.push(this.team.groups)
-        // this.rows.flag.push(this.team.flag)
-
+        console.log("TIMES", this.team)
     },
 }
 </script>
 
-<style lang="sass">
-.grid-masonry
-    flex-direction: column
-    height: 700px
+<style>
+.q-card {
+    position: relative;
+    height: 250px;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all .25s ease-in-out;
+}
+
+.q-card:hover {
+    box-shadow: 0 4px 20px #400822;
+}
+
+.q-card:hover .effect {
+    transform: translateY(-5%);
+}
+
+.effect {
+    transition: all .25s ease-in-out;
+}
+
+.effect::after {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out 0s;
+}
 </style>
